@@ -1,0 +1,72 @@
+<h3 class="text-center">User Details</h3>
+
+<form accept-charset="UTF-8" action="action_page.php" autocomplete="off" method="GET" target="_blank">
+    <fieldset>
+        <legend>Details:</legend> 
+        <table class='table table-striped table-dark table-bordered table-hover table-sm' aria-labelledby="tableLabel"
+        *ngIf="user">
+        <tbody>
+            <tr>
+              <th scope="row">Name</th>
+              <th scope="row">{{ user.name }}</th>
+            </tr>
+            <tr>
+              <th scope="row">User Name</th>
+              <td scope="row">{{ user.username }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </fieldset>
+   
+    <fieldset>
+      <legend>Contact:</legend>
+      <table class='table table-striped table-dark table-bordered table-hover table-sm' aria-labelledby="tableLabel"
+        *ngIf="user">
+  
+        <tbody>
+          <tr>
+            <th scope="row">Phone</th>
+            <td scope="row">{{ user.phone }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td scope="row">{{ user.email }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Website</th>
+            <td scope="row">{{ user.website }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset>
+      <legend>Address:</legend>
+      <table class='table table-striped table-dark table-bordered table-hover table-sm' aria-labelledby="tableLabel"
+        *ngIf="user">
+  
+        <tbody>
+          <tr>
+            <th scope="row">Address</th>
+            <td scope="row">{{ user.address.suite }} &nbsp;{{ user.address.street }}
+              &nbsp;{{ user.address.city }}&nbsp;{{ user.address.zipcode }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Geo Location</th>
+            <td scope="row">{{ user.address.geo.lat }} &nbsp; {{ user.address.geo.lng }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset>
+      <legend>Company:</legend>
+      <table class='table table-striped table-dark table-bordered table-hover table-sm' *ngIf="user">
+        <tbody>
+          <tr>
+            <th scope="row">Company</th>
+            <td scope="row">{{ user.company.name }} &nbsp;{{ user.company.bs }} &nbsp;{{ user.company.catchPhrase }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  
+  </form>
